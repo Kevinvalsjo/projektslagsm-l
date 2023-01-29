@@ -176,7 +176,7 @@ public class ProjektSlagsmålspel {
                 ditt_hp = 200;
                 System.out.println("Fienden har nu blivit starkare. +1 skada & mer hp ");
                 poäng += Math.random()*4+1;
-                System.out.println("poäng:poäng);
+                System.out.println("poäng:"+poäng);
                 fiendens_hp = poäng*3 +fiendens_starthp;
             }
              else{
