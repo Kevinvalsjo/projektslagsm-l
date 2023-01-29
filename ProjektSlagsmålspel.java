@@ -176,7 +176,7 @@ public class ProjektSlagsmålspel {
                 ditt_hp = 200;
                 System.out.println("Fienden har nu blivit starkare. +1 skada & mer hp ");
                 poäng += Math.random()*4+1;
-                System.out.println(poäng);
+                System.out.println("poäng:poäng);
                 fiendens_hp = poäng*3 +fiendens_starthp;
             }
              else{
@@ -195,7 +195,7 @@ public class ProjektSlagsmålspel {
             
     }
         else{
-            System.out.println("Du har kommit till sista bossen!");
+            System.out.println("Du har fått 20 poäng och har kommit till sista bossen!");
             poäng -=100;
             k = 16;
             fiendens_hp += 1000;
