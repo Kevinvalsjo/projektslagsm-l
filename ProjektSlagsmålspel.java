@@ -82,7 +82,7 @@ public class ProjektSlagsmålspel {
                 }
                 if(d_atk2 >25 || d_atk >25 )
                 {
-                    int svärdskada = (int) (Math.random()*300);
+                    int svärdskada = (int) (Math.random()*200);
                     System.out.println("DU FICK SÅ MYCKET SKADA ATT DU KALLADE PÅ GUD OCH FICK ETT ONE TIME USE OCH GJORDE: " + svärdskada+"skada och fienden förlorade "+svärdskada+"hp");
                     fiendens_hp -= svärdskada;
                     System.out.println(fiendens_hp);
