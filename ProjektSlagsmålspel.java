@@ -7,13 +7,19 @@ public class JavaApplication21{
         Scanner tangentbord = new Scanner(System.in);
         System.out.println("Hej och velkommen till detta slagsmolspel. Du kommer fa en chans att valja hur svor forsta leveln ska vara.");
         System.out.println("Din fiende kommer börja med 10hp! Ditt hp kommer alltid vara 200");
-       
+            System.out.println("Fienden kommer börja attackera. När fienden har attackerat klart trycker du enter för att attackera"  );
         int fiendens_hp = 10;
         int fiendens_starthp = fiendens_hp;
         int ditt_hp = 200;
         boolean play = true;
         System.out.println("Är du redo att starta? (ja/nej)");
         String svar = tangentbord.next();
+        
+        while(!"ja".equalsIgnoreCase(svar) && !"Nej".equalsIgnoreCase(svar))
+        {
+            System.out.println("Du måste skriva 'ja' eller 'nej'");
+            svar = tangentbord.next();
+        }
         String lvl4 = "";
         String lvl3 ="";
         if(svar.equalsIgnoreCase("ja")){
@@ -27,7 +33,7 @@ public class JavaApplication21{
         scan.nextLine();
         
         ditt_hp -= tal1;
-        System.out.println("Du förlorade "+tal1+" HP. Och du får nu en chans att attackera");
+        System.out.println("Fienden slog dig och du förlorade "+tal1+" HP. Och du får nu en chans att attackera");
         int poäng = 0;
          int o = 0;
         int[] fält1 = new int[4];
@@ -62,7 +68,7 @@ public class JavaApplication21{
                 int a = d_atk2;
                 scan.nextLine();
                 
-                System.out.println("Fienden förlorade "+d_atk2+" HP. ");
+                System.out.println("Du slog till fienden och fienden förlorade "+d_atk2+" HP. ");
                 System.out.println("Fienden attackerar!! (Enter)");
                 scan.nextLine();
                
@@ -109,8 +115,17 @@ public class JavaApplication21{
                    System.out.println("Differensen mellan era skador är:" + differens2); 
                 if(d_atk2==i && d_atk2<=25){
                 System.out.println("\nDu fick maximerad skada och du öppnade nu ett vapenförråd. Vad vill du använda för vapen?, 1.Yxa , 2.Kniv 3.Knytnäve");
-                int val = tangentbord.nextInt();
-                           switch(val){
+                String val = tangentbord.next();
+                while(!"1".equalsIgnoreCase(val)&&!"2".equalsIgnoreCase(val) &&! "3".equalsIgnoreCase(val) )
+                {
+                    System.out.println("Du måste skriva in en siffra mellan 1-3");
+                    System.out.println("1.Yxa , 2.Kniv 3.Knytnäve");
+                    val = tangentbord.nextLine();
+                }
+                int vals = Integer.parseInt(val);
+                    System.out.println("Du valde "+vals);
+                    scan.nextLine();
+                           switch(vals){
             
                            case 1 ->  
             {
@@ -147,7 +162,7 @@ public class JavaApplication21{
                 }
                 else{
                 int knivs =(int) Math.random()*20+10;
-                System.out.println("Du fick en lyckad träff och körde upp kniven rakt i örat och fienden förlorar " +knivs+ " hp");
+                System.out.println("Du fick en lyckad träff och körde upp kniven rakt i örat och fienden förlorade " +knivs+ " hp");
                 fiendens_hp -= knivs;
                  if(fiendens_hp<=0 || ditt_hp<=0)
                 {
@@ -162,7 +177,7 @@ public class JavaApplication21{
                 int näve = (int) (Math.random()*20);
                 if(näve>0)
                 {
-                System.out.println("Du slog till fienden hårt och gjorde " +näve+ " skada");
+                System.out.println("Du tog din knytnäve och slog fienden och därmed gjorde du " +näve+ " skada");
                 fiendens_hp -=näve;
                 System.out.println(fiendens_hp+ " " + ditt_hp);
                  if(fiendens_hp<=0 || ditt_hp<=0)
@@ -223,6 +238,11 @@ public class JavaApplication21{
          System.out.println("Vill du fortsätta till runda:"+ (runda) +" ? (ja/nej)");
         
             String spel = tangentbord.next();
+             while(!"ja".equalsIgnoreCase(spel) && !"Nej".equalsIgnoreCase(spel))
+        {
+            System.out.println("Du måste skriva 'ja' eller 'nej'");
+            spel = tangentbord.next();
+        }
             
             if(spel.equalsIgnoreCase("ja")){
             
