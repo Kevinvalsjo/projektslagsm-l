@@ -117,10 +117,12 @@ public class JavaApplication21{
                 System.out.println("\nDu fick maximerad skada och du öppnade nu ett vapenförråd. Vad vill du använda för vapen?, 1.Yxa , 2.Kniv 3.Knytnäve");
                 String val = tangentbord.next();
                 while(!"1".equalsIgnoreCase(val)&&!"2".equalsIgnoreCase(val) &&! "3".equalsIgnoreCase(val) )
-                {
+                { 
+                   
                     System.out.println("Du måste skriva in en siffra mellan 1-3");
                     System.out.println("1.Yxa , 2.Kniv 3.Knytnäve");
                     val = tangentbord.nextLine();
+                    
                 }
                 int vals = Integer.parseInt(val);
                     System.out.println("Du valde "+vals);
@@ -133,15 +135,16 @@ public class JavaApplication21{
                 int yxa = (int) (Math.random()*40);
                
                 if(yxa<25)
-                {
-                    System.out.println("Fienden hade en sköld där och blockade ditt slag och istället använde yxan till att öka sitt hp");
+                { 
                     fiendens_hp += 10;
+                    System.out.println("Fienden hade en sköld där och blockade ditt slag och istället använde yxan till att öka sitt hp");
+                   
                     
                       
                 }
                 else
                 {
-                    System.out.println("Du slog till med yxan och gjorde"+yxa +"skada");
+                    System.out.println("Du slog till med yxan och gjorde "+yxa +" skada");
                     fiendens_hp -=yxa;
                     if(fiendens_hp<=0 || ditt_hp<=0)
                 {
@@ -179,12 +182,13 @@ public class JavaApplication21{
                 {
                 System.out.println("Du tog din knytnäve och slog fienden och därmed gjorde du " +näve+ " skada");
                 fiendens_hp -=näve;
-                System.out.println(fiendens_hp+ " " + ditt_hp);
                  if(fiendens_hp<=0 || ditt_hp<=0)
                 {
                     fiendens_hp=0;
                     break;
                 }
+                System.out.println("F_hp: "+fiendens_hp+  "\nD_hp: " + ditt_hp);
+                
                 
                 }
                 else
