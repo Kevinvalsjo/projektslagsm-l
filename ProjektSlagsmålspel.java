@@ -252,9 +252,13 @@ public class JavaApplication21{
             
                 k += 1;
                 ditt_hp = 200;
-                System.out.println("Fienden har nu blivit starkare. +1 skada & mer hp ");
-                poäng += Math.random()*5+1;
-                System.out.println("poäng:"+poäng);
+                System.out.println("Fienden har nu blivit starkare.");
+                int p = (int) (Math.random()*4+1);
+                poäng += p;
+                
+                System.out.println("Du fick " +p + " poäng den här rundan");
+                
+                System.out.println("\npoäng:"+poäng);
                 fiendens_hp = poäng*3 +fiendens_starthp;
                 if(poäng>=4 && poäng<8)
                 {
