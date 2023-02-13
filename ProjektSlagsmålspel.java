@@ -164,7 +164,7 @@ public class JavaApplication21{
                     
                 }
                 else{
-                int knivs =(int) Math.random()*20+10;
+                int knivs =(int) (Math.random() * 20 + 10);
                 System.out.println("Du fick en lyckad träff och körde upp kniven rakt i örat och fienden förlorade " +knivs+ " hp");
                 fiendens_hp -= knivs;
                  if(fiendens_hp<=0 || ditt_hp<=0)
