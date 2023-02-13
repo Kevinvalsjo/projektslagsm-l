@@ -24,8 +24,8 @@ public class JavaApplication21{
         String lvl3 ="";
         if(svar.equalsIgnoreCase("ja")){
          int runda =1 ;
-        int i = 6;
-        int k = 3;
+        int i = 6;//din attack
+        int k = 3;//fiendens attack
         int tal1  = (int) (Math.random()*k);
         System.out.println("Fienden börjar! Tryck (Enter) för att fortsätta");
         String fiende = "Johan, lvl 1";
@@ -35,7 +35,7 @@ public class JavaApplication21{
         ditt_hp -= tal1;
         System.out.println("Fienden slog dig och du förlorade "+tal1+" HP. Och du får nu en chans att attackera");
         int poäng = 0;
-         int o = 0;
+         int o = 0;//boss variabel
         int[] fält1 = new int[4];
         while(play)
         { 
@@ -43,7 +43,7 @@ public class JavaApplication21{
         {
             while(fiendens_hp >0 && ditt_hp > 0){
                
-               if(poäng<4 && poäng >= 0)
+               if( poäng >= 0 && poäng<4 )
                {
                 System.out.println(fiende);
                }
@@ -290,12 +290,13 @@ public class JavaApplication21{
     }
         else
            { 
-               if(fiendens_hp<=0){
+               if(fiendens_hp<=0){ 
             System.out.println("DU VANN ÖVER BOSSEN! GRATTIS! Spelet avslutas");
            play = false;
                }
                else
-               {
+               { 
+                   ditt_hp =0;
                    System.out.println("Du förlorade över bossen:( hejdå");
                    play = false;
                }
@@ -314,7 +315,7 @@ public class JavaApplication21{
             fiendens_hp += 3000;
             ditt_hp = 600;
             i +=30;
-            o += 20;
+            o += 20; //variabel så att spelet inte avslutar vid bossdefeat
             
             }    
     }
